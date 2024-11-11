@@ -7,9 +7,9 @@ return {
     {
       "<leader>f",
       function()
-          require("conform").format { async = true, lsp_format = "fallback" }
+        require("conform").format { async = true, lsp_format = "first" }
       end,
-      mode = '',
+      mode = "",
       desc = "[F]ormat buffer",
     },
   },
