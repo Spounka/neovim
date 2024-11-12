@@ -2,16 +2,17 @@
 -- https://github.com/nvim-neo-tree/neo-tree.nvim
 
 return {
-  'nvim-neo-tree/neo-tree.nvim',
-  version = '*',
+  "nvim-neo-tree/neo-tree.nvim",
+  version = "*",
   dependencies = {
-    'nvim-lua/plenary.nvim',
-    'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-    'MunifTanjim/nui.nvim',
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+    "MunifTanjim/nui.nvim",
+    "3rd/image.nvim",
   },
-  cmd = 'Neotree',
+  cmd = "Neotree",
   keys = {
-    { '<leader>op', ':Neotree toggle<CR>', desc = 'NeoTree reveal', silent = true },
+    { "<leader>op", ":Neotree toggle<CR>", desc = "NeoTree reveal", silent = true },
   },
   opts = {},
 }
