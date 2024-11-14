@@ -3,7 +3,7 @@ return {
   keys = {
     {
       '<leader>gg',
-      '<cmd>Git | wincmd _<cr>',
+      '<cmd>Git<cr>',
     },
   },
 }
