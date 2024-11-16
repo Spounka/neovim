@@ -144,6 +144,7 @@ return {
         tailwindcss = { autostart = false },
         dockerls = { autostart = false },
         cmake = { autostart = false },
+        csharp_ls = { autostart = false },
 
         lua_ls = {
           autostart = false,

@@ -1,4 +1,4 @@
-vim.keymap.set({ "n", "x" }, "<Leader>cl", function()
+vim.keymap.set({ "n", "x" }, "<Leader>pl", function()
   vim.cmd("LspStart")
 end, { silent = true, desc = "[P]roject [L]sp" })
 

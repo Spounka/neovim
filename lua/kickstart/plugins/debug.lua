@@ -6,11 +6,14 @@
 -- be extended to other languages as well. That's why it's called
 -- kickstart.nvim and not kitchen-sink.nvim ;)
 
+local defines = require("spounka.defines")
+
 return {
   -- NOTE: Yes, you can install new plugins here!
   "mfussenegger/nvim-dap",
   -- NOTE: And you can specify dependencies as well
-  VeryLazy = true,
+  lazy = true,
+  ft = defines.DEBUG_LAZY_FILE_TYPES,
   dependencies = {
     -- Creates a beautiful debugger UI
     {
@@ -39,24 +42,56 @@ return {
     },
   },
   keys = function(_, keys)
-    local dap = require("dap")
-    local dapui = require("dapui")
     return {
-      -- Basic debugging keymaps, feel free to change to your liking!
-      { "<F5>", dap.continue, desc = "Debug: Start/Continue" },
-      { "<F1>", dap.step_into, desc = "Debug: Step Into" },
-      { "<F2>", dap.step_over, desc = "Debug: Step Over" },
-      { "<F3>", dap.step_out, desc = "Debug: Step Out" },
-      { "<leader>cb", dap.toggle_breakpoint, desc = "Debug: Toggle Breakpoint" },
+      {
+        "<leader>dc",
+        function()
+          require("dap").continue()
+        end,
+        desc = "Debug: Start/Continue",
+      },
+      {
+        "<leader>di",
+        function()
+          require("dap").step_into()
+        end,
+        desc = "Debug: Step Into",
+      },
+      {
+        "<leader>do",
+        function()
+          require("dap").step_over()
+        end,
+        desc = "Debug: Step Over",
+      },
+      {
+        "<leader>dO",
+        function()
+          require("dap").step_out()
+        end,
+        desc = "Debug: Step Out",
+      },
+      {
+        "<leader>db",
+        function()
+          require("dap").toggle_breakpoint()
+        end,
+        desc = "Debug: Toggle Breakpoint",
+      },
       {
         "<leader>cB",
         function()
-          dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+          require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
         end,
-        desc = "Debug: Set Breakpoint",
       },
       -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
-      { "<F7>", dapui.toggle, desc = "Debug: See last session result." },
+      {
+        "<leader>dt",
+        function()
+          require("dapui").toggle()
+        end,
+        desc = "Debug: See last session result.",
+      },
       unpack(keys),
     }
   end,
@@ -71,13 +106,26 @@ return {
 
       -- You can provide additional configuration to the handlers,
       -- see mason-nvim-dap README for more information
-      handlers = {},
+      handlers = {
+        python = function(config)
+          config.adapters = {
+            type = "executable",
+            command = "/usr/bin/python3",
+            args = {
+              "-m",
+              "debugpy.adapter",
+            },
+          }
+          require("mason-nvim-dap").default_setup(config) -- don't forget this!
+        end,
+      },
 
       -- You'll need to check that you have the required things installed
       -- online, please don't ask me how to install them :)
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         "delve",
+        unpack(defines.DEBUG_LAZY_FILE_TYPES),
       },
     })
 

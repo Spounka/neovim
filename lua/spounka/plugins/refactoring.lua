@@ -1,11 +1,14 @@
+local defines = require("spounka.defines")
+
 return {
-  'ThePrimeagen/refactoring.nvim',
+  "ThePrimeagen/refactoring.nvim",
+  lazy = true,
+  ft = defines.REFACTOR_FILES_TYPES,
   dependencies = {
-    'nvim-lua/plenary.nvim',
-    'nvim-treesitter/nvim-treesitter',
+    "nvim-lua/plenary.nvim",
+    "nvim-treesitter/nvim-treesitter",
   },
-  lazy = false,
   config = function()
-    require('refactoring').setup()
+    require("refactoring").setup()
   end,
 }
