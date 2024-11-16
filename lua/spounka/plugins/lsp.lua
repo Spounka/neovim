@@ -144,9 +144,9 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local lspconfig = require("lspconfig")
       local servers = {
-        clangd = {},
-        gopls = {},
-        pyright = {},
+        clangd = { autostart = false },
+        gopls = { autostart = false },
+        pyright = { autostart = false },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -154,10 +154,20 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = { autostart = false },
+        angularls = { autostart = false },
+        biome = { autostart = false },
+        html = { autostart = false },
+        cssls = { autostart = false },
+        jedi_language_server = { autostart = false },
+        jsonls = { autostart = false },
+        markdownlint = { autostart = false },
+        tailwindcss = { autostart = false },
+        dockerls = { autostart = false },
         --
 
         lua_ls = {
+          autostart = false,
           -- cmd = {...},
           -- filetypes = { ...},
           -- capabilities = {},
@@ -183,7 +193,7 @@ return {
       end, {})
 
       vim.api.nvim_create_user_command("LspStartTs", function()
-        vim.lsp.start_client(lspconfig.tsserver.document_config)
+        vim.lsp.start_client(lspconfig.ts_ls.document_config)
       end, {})
 
       -- Ensure the servers and tools above are installed
