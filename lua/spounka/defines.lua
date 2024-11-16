@@ -26,7 +26,17 @@ return {
     "json",
     "yaml",
   },
-  REFACTOR_LAZY_FILES_TYPES = {},
+  -- Not necessarily the same
+  REFACTOR_LAZY_FILES_TYPES = {
+    "go",
+    "lua",
+    "c",
+    "cpp",
+    "c#",
+    "typescript",
+    "java",
+    "python",
+  },
   DEBUG_LAZY_FILE_TYPES = {
     "go",
     "lua",

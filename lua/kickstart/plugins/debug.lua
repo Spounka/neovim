@@ -13,17 +13,30 @@ return {
   VeryLazy = true,
   dependencies = {
     -- Creates a beautiful debugger UI
-    "rcarriga/nvim-dap-ui",
+    {
+
+      "rcarriga/nvim-dap-ui",
+      lazy = true,
+    },
 
     -- Required dependency for nvim-dap-ui
-    "nvim-neotest/nvim-nio",
+    {
+
+      "nvim-neotest/nvim-nio",
+      lazy = true,
+    },
 
     -- Installs the debug adapters for you
-    "williamboman/mason.nvim",
-    "jay-babu/mason-nvim-dap.nvim",
+    {
 
-    -- Add your own debuggers here
-    -- "leoluz/nvim-dap-go",
+      "williamboman/mason.nvim",
+      lazy = true,
+    },
+    {
+
+      "jay-babu/mason-nvim-dap.nvim",
+      lazy = true,
+    },
   },
   keys = function(_, keys)
     local dap = require("dap")
@@ -117,6 +130,5 @@ return {
     dap.listeners.after.event_initialized["dapui_config"] = dapui.open
     dap.listeners.before.event_terminated["dapui_config"] = dapui.close
     dap.listeners.before.event_exited["dapui_config"] = dapui.close
-
   end,
 }

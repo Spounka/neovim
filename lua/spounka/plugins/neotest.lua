@@ -1,13 +1,12 @@
 local defines = require("spounka.defines")
 return {
-  "Exafunction/codeium.nvim",
+  "nvim-neotest/neotest",
   lazy = true,
   ft = defines.REFACTOR_LAZY_FILES_TYPES,
   dependencies = {
+    "nvim-neotest/nvim-nio",
     "nvim-lua/plenary.nvim",
-    "hrsh7th/nvim-cmp",
+    "antoinemadec/FixCursorHold.nvim",
+    "nvim-treesitter/nvim-treesitter",
   },
-  config = function()
-    require("codeium").setup({})
-  end,
 }
