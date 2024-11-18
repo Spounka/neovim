@@ -29,8 +29,6 @@ return {
       -- Allows extra capabilities provided by nvim-cmp
       "hrsh7th/cmp-nvim-lsp",
     },
-    lazy = true,
-    ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
     config = function()
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
@@ -162,19 +160,32 @@ return {
           },
         },
       }
-      local other = {
+      local formatters = {
         "stylua",
         "flake8",
-        "clang",
         "prettier",
+        "clang-format",
+        "biome",
+      }
+      local linters = {
+        "cmakelint",
+        "djlint",
+        "jsonlint",
+        "yamllint",
+        "htmlhint",
+        "mypy",
+        "hadolint",
+        "cmakelang",
+        "luacheck",
       }
       --  You can press `g?` for help in this menu.
       -- require("mason").setup()
 
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, other)
+      local ensure_installed = vim.tbl_keys(servers or { python = { autostart = false } })
+      vim.list_extend(ensure_installed, formatters)
+      vim.list_extend(ensure_installed, linters)
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
       require("mason-lspconfig").setup({
