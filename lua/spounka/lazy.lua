@@ -39,4 +39,9 @@ require("lazy").setup({
     --   lazy = "💤 ",
     -- },
   },
+  checker = { enabled = false },
+  change_detection = {
+    enabled = false,
+    notify = false,
+  },
 })
