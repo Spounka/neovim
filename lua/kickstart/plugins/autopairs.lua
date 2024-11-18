@@ -5,7 +5,7 @@ local defines = require("spounka.defines")
 
 return {
   "windwp/nvim-autopairs",
-  event = "InsertEnter",
+  event = "VeryLazy",
   ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
   -- Optional dependency
   dependencies = { "hrsh7th/nvim-cmp" },
