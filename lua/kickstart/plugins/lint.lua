@@ -11,6 +11,13 @@ return {
       local lint = require("lint")
       lint.linters_by_ft = {
         markdown = { "markdownlint" },
+        python = { "flake8", "mypy" },
+        typescript = { "prettier" },
+        tsx = { "prettier" },
+        typescriptreact = { "prettier" },
+        lua = { "luacheck" },
+        dockerfile = { "hadolint" },
+        cmake = { "cmakelint" },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
