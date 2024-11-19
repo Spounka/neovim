@@ -7,7 +7,8 @@ return {
     ft = "lua",
     opts = {
       library = {
-        -- Load luvit types when the `vim.uv` word is found { path = "luvit-meta/library", words = { "vim%.uv" } },
+        -- Load luvit types when the `vim.uv` word is found
+        { path = "luvit-meta/library", words = { "vim%.uv" } },
       },
     },
   },
@@ -16,6 +17,7 @@ return {
   {
     -- Main LSP Configuration
     "neovim/nvim-lspconfig",
+    event = "VeryLazy",
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { "williamboman/mason.nvim", config = true },
