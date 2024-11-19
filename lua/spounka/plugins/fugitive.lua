@@ -1,9 +1,9 @@
 return {
-  'tpope/vim-fugitive',
+  "tpope/vim-fugitive",
   keys = {
     {
-      '<leader>gg',
-      '<cmd>Git<cr>',
+      "<leader>gg",
+      "<cmd>Git<cr>",
     },
   },
 }
