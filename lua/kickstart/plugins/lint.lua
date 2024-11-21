@@ -12,9 +12,9 @@ return {
       lint.linters_by_ft = {
         markdown = { "markdownlint" },
         python = { "flake8", "mypy" },
-        typescript = { "prettier" },
-        tsx = { "prettier" },
-        typescriptreact = { "prettier" },
+        typescript = { "eslint_d" },
+        tsx = { "eslint_d" },
+        typescriptreact = { "eslint_d" },
         lua = { "luacheck" },
         dockerfile = { "hadolint" },
         cmake = { "cmakelint" },

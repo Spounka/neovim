@@ -17,7 +17,6 @@ return {
   {
     -- Main LSP Configuration
     "neovim/nvim-lspconfig",
-    event = "VeryLazy",
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { "williamboman/mason.nvim", config = true },
@@ -134,13 +133,11 @@ return {
         gopls = { autostart = false },
         pyright = { autostart = false },
         ts_ls = { autostart = false },
-        angularls = { autostart = false },
-        biome = { autostart = false },
+        angularls = { autostart = true },
         html = { autostart = false },
         cssls = { autostart = false },
         jedi_language_server = { autostart = false },
         jsonls = { autostart = false },
-        markdownlint = { autostart = false },
         tailwindcss = { autostart = false },
         dockerls = { autostart = false },
         cmake = { autostart = false },
