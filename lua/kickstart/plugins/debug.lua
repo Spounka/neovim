@@ -125,6 +125,10 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         "delve",
+        "typescript",
+        "javascript",
+        "codelldb",
+        "go",
         unpack(defines.DEBUG_LAZY_FILE_TYPES),
       },
     })
