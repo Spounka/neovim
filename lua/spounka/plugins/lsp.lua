@@ -142,6 +142,7 @@ return {
         dockerls = { autostart = false },
         cmake = { autostart = false },
         csharp_ls = { autostart = false },
+        ltex = { autostart = false },
 
         lua_ls = {
           autostart = false,
@@ -176,6 +177,7 @@ return {
         "hadolint",
         "cmakelang",
         "luacheck",
+        "markdownlint",
       }
       --  You can press `g?` for help in this menu.
       -- require("mason").setup()
