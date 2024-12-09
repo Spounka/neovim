@@ -19,7 +19,8 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       cmake = { "cmake_format" },
-      c = { "clangd" },
+      c = { "clang-format" },
+      cpp = { "clang-format" },
       -- Conform can also run multiple formatters sequentially
       python = { "isort", "black" },
       go = {},
