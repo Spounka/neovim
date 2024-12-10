@@ -16,7 +16,7 @@ vim.keymap.set({ "n", "v" }, "<Leader>td", function()
 end, { silent = true, desc = "[T]ab [D]elete" })
 
 vim.keymap.set({ "n", "v" }, "<Leader>tl", function()
-  vim.cmd.tabNext()
+  vim.cmd.tabnext()
 end, { silent = true, desc = "[T]ab Next" })
 
 vim.keymap.set({ "n", "v" }, "<Leader>th", function()
