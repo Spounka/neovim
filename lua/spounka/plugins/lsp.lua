@@ -140,6 +140,7 @@ return {
         jsonls = { autostart = false },
         tailwindcss = { autostart = false },
         dockerls = { autostart = false },
+        docker_compose_language_service = { autostart = true },
         cmake = { autostart = false },
         csharp_ls = { autostart = false },
         ltex = { autostart = false },
