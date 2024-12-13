@@ -56,6 +56,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
       pickers = {
         find_files = {
           theme = "ivy",
+          preview = true,
+        },
+        live_grep = {
+          theme = "ivy",
         },
       },
       extensions = {
@@ -66,6 +70,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       },
     })
 
+    require("telescope").load_extension("fzf")
     -- Enable Telescope extensions if they are installed
     pcall(require("telescope").load_extension, "fzf")
     pcall(require("telescope").load_extension, "ui-select")
