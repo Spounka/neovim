@@ -70,3 +70,6 @@ vim.o.shiftwidth = 0
 vim.o.softtabstop = 0
 vim.o.expandtab = true
 vim.o.autoindent = true
+
+vim.opt.spell = true
+vim.opt.spelllang = 'en_gb'
