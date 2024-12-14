@@ -72,4 +72,5 @@ vim.o.expandtab = true
 vim.o.autoindent = true
 
 vim.opt.spell = true
-vim.opt.spelllang = 'en_gb'
+vim.opt.spelllang = "en_gb,fr"
+vim.opt.spo = { "camel" }
