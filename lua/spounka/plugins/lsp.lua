@@ -1,3 +1,4 @@
+local defines = require("spounka.defines")
 return {
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
@@ -8,6 +9,8 @@ return {
       library = {
         -- Load luvit types when the `vim.uv` word is found
         { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+        "lazy.nvim",
+        "LazyVim",
       },
     },
   },
@@ -16,6 +19,8 @@ return {
   {
     -- Main LSP Configuration
     "neovim/nvim-lspconfig",
+    ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
+    lazy = true,
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { "williamboman/mason.nvim", config = true },
@@ -158,6 +163,15 @@ return {
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
+              runtime = {
+                version = "LuaJIT",
+              },
+              workspace = {
+                checkThirdParty = false,
+                library = {
+                  vim.env.VIMRUNTIME,
+                },
+              },
             },
           },
         },
