@@ -1,6 +1,8 @@
+local defines = require("spounka.defines")
 return {
   "smoka7/multicursors.nvim",
-  event = "VeryLazy",
+  lazy = true,
+  ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
   dependencies = {
     "smoka7/hydra.nvim",
   },

@@ -3,6 +3,7 @@ local defines = require("spounka.defines")
 return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
+  lazy = true,
   ft = defines.REFACTOR_LAZY_FILES_TYPES,
   dependencies = {
     -- Snippet Engine & its associated nvim-cmp source

@@ -5,7 +5,7 @@ return {
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help ibl`
     main = "ibl",
-    event = "VeryLazy",
+    lazy = true,
     ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
     opts = {},
   },
