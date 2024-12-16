@@ -5,19 +5,7 @@
 return {
   {
     "lewis6991/gitsigns.nvim",
-    lazy = true,
-    cond = function()
-      local handle = io.popen("git rev-parse --git-dir")
-      if not handle then
-        return false
-      end
-      local success, exit_code, _ = handle:close()
-      if not success then
-        print("Failed to run command with exit code: " .. (exit_code or "unknown"))
-        return false
-      end
-      return true
-    end,
+    event = "VeryLazy",
     opts = {
       on_attach = function(bufnr)
         local gitsigns = require("gitsigns")
