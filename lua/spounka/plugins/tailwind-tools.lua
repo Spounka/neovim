@@ -2,8 +2,8 @@
 return {
   "luckasRanarison/tailwind-tools.nvim",
   name = "tailwind-tools",
-  ft = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
   lazy = true,
+  ft = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
   build = ":UpdateRemotePlugins",
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
@@ -11,21 +11,18 @@ return {
     "neovim/nvim-lspconfig", -- optional
   },
   opts = {}, -- your configuration
-  keys = {
-    {
-      "<leader>F",
-      function()
-        print("sorting tailwind...")
-        vim.cmd("TailwindSort")
-      end,
-      mode = { "n", "i", "x" },
+  config = function()
+    require("tailwind-tools").setup({})
+    vim.keymap.set({ "n", "i", "x" }, "<leader>F", function()
+      print("sorting tailwind...")
+      vim.cmd("TailwindSort")
+    end, {
       desc = "Sort Tailwind Classes",
-    },
-    {
-      "<leader>F",
-      ":TailwindSortSelection",
-      mode = { "v" },
-      desc = "Sort Tailwind Classes in Selection",
-    },
-  },
+    })
+    vim.keymap.set({ "v" }, "<leader>F", function()
+      vim.cmd("TailwindSortSelection")
+    end, {
+      desc = "Sort Selection Tailwind Classes",
+    })
+  end,
 }
