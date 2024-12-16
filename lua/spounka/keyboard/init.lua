@@ -3,4 +3,5 @@ require("spounka.keyboard.debug")
 require("spounka.keyboard.lsp")
 require("spounka.keyboard.fugitive")
 require("spounka.keyboard.refactoring")
+require("spounka.keyboard.misc")
 return {}
