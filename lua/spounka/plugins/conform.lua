@@ -25,10 +25,10 @@ return {
       python = { "isort", "black" },
       go = {},
       markdown = { "markdownlint" },
-      typescript = { "prettier", "biome", stop_after_first = true },
-      typescriptreact = { "prettier", "biome", stop_after_first = true },
-      javascript = { "prettier", "biome", stop_after_first = true },
-      javascriptreact = { "prettier", "biome", stop_after_first = true },
+      typescript = { "prettierd", "prettier", "biome", stop_after_first = true },
+      typescriptreact = { "prettierd", "prettier", "biome", stop_after_first = true },
+      javascript = { "prettierd", "prettier", "biome", stop_after_first = true },
+      javascriptreact = { "prettierd", "prettier", "biome", stop_after_first = true },
       --
       -- You can use "stop_after_first" to run the first available formatter from the list
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
