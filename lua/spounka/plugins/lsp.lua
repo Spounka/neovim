@@ -179,6 +179,8 @@ return {
       local formatters = {
         "stylua",
         "flake8",
+        "black",
+        "isort",
         "prettier",
         "clang-format",
         "biome",
