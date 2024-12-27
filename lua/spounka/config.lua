@@ -74,3 +74,19 @@ vim.o.autoindent = true
 vim.opt.spell = true
 vim.opt.spelllang = "en_gb,fr"
 vim.opt.spo = { "camel" }
+
+local defines = require("spounka.defines")
+vim.api.nvim_create_augroup("SpellCheck", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  group = "SpellCheck",
+  pattern = defines.TREE_SITTER_ENABLED_LANGUAGES,
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = "SpellCheck",
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})
