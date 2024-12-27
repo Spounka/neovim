@@ -1,6 +1,10 @@
+local defines = require("spounka.defines")
+
 return { -- Fuzzy Finder (files, lsp, etc)
   "nvim-telescope/telescope.nvim",
-  event = "VimEnter",
+  ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
+  lazy = true,
+  -- event = "VimEnter",
   branch = "0.1.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
