@@ -8,7 +8,7 @@ return {
   config = function()
     require("cmake-tools").setup({
       cmake_dap_configuration = {
-        -- console = "toggleterm"
+        console = "integratedTerminal",
       },
       cmake_runner = {
         name = "toggleterm",
