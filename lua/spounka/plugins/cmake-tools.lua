@@ -17,8 +17,8 @@ return {
             auto_close_when_success = false,
           },
           toggleterm = {
-            direction = "tab",
-            close_on_exit = true,
+            direction = "float",
+            close_on_exit = false,
           },
         },
       },
