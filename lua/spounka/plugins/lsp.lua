@@ -197,7 +197,7 @@ return {
         "cmakelang",
         "luacheck",
         "markdownlint",
-        "ansible",
+        "ansible-lint",
       }
       --  You can press `g?` for help in this menu.
       -- require("mason").setup()
