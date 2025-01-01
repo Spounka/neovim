@@ -150,6 +150,7 @@ return {
         cmake = { autostart = false },
         csharp_ls = { autostart = false },
         ltex = { autostart = false },
+        ansiblels = { autostart = false },
 
         lua_ls = {
           autostart = false,
@@ -196,6 +197,7 @@ return {
         "cmakelang",
         "luacheck",
         "markdownlint",
+        "ansible",
       }
       --  You can press `g?` for help in this menu.
       -- require("mason").setup()
