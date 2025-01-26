@@ -52,6 +52,7 @@ return {
     "java",
     "json",
     "yaml",
+    "bash",
   },
 
   REFACTOR_LAZY_FILES_TYPES = {
