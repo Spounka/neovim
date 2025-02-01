@@ -46,7 +46,7 @@ return {
     "typescriptreact",
     "tsx",
     "jsx",
-    "latex",
+    "tex",
     "php",
     "dockerfile",
     "java",
