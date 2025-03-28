@@ -19,8 +19,9 @@ return {
   {
     -- Main LSP Configuration
     "neovim/nvim-lspconfig",
-    ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
-    lazy = true,
+    -- ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
+    -- lazy = true,
+    event = "VeryLazy",
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { "williamboman/mason.nvim", config = true },
