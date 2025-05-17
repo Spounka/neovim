@@ -21,7 +21,6 @@ return {
     "neovim/nvim-lspconfig",
     -- ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
     -- lazy = true,
-    event = "VeryLazy",
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { "williamboman/mason.nvim", config = true },
@@ -134,24 +133,33 @@ return {
       capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
       local servers = {
-        clangd = { autostart = false },
-        gopls = { autostart = false },
-        pyright = { autostart = false },
-        -- ts_ls = { autostart = false },
-        -- typescript_tools = {autostart = false},
         angularls = { autostart = true },
-        eslint = { autostart = true },
-        html = { autostart = false },
+        ansiblels = { autostart = false },
+        bashls = { autostart = false },
+        clangd = { autostart = false },
+        cmake = { autostart = false },
         cssls = { autostart = false },
+        dockerls = { autostart = false },
+        docker_compose_language_service = { autostart = false },
+        emmet_ls = { autostart = false },
+        eslint = { autostart = true },
+        gopls = { autostart = false },
+
+        html = { autostart = false },
+
+        jdtls = { autostart = false },
         jedi_language_server = { autostart = false },
         jsonls = { autostart = false },
+
+        nginx_language_server = { autostart = false },
+
+        pyright = { autostart = false },
+
         tailwindcss = { autostart = false },
-        dockerls = { autostart = false },
-        docker_compose_language_service = { autostart = true },
-        cmake = { autostart = false },
-        csharp_ls = { autostart = false },
         texlab = { autostart = false },
-        ansiblels = { autostart = false },
+        ts_ls = { autostart = false },
+
+        yamlls = { autostart = false },
 
         lua_ls = {
           autostart = false,
@@ -199,6 +207,7 @@ return {
         "luacheck",
         "markdownlint",
         "ansible-lint",
+        "commitlint",
       }
       --  You can press `g?` for help in this menu.
       -- require("mason").setup()
