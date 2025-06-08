@@ -1,4 +1,3 @@
-local defines = require("spounka.defines")
 return {
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
@@ -19,8 +18,12 @@ return {
   {
     -- Main LSP Configuration
     "neovim/nvim-lspconfig",
+<<<<<<< HEAD
     -- ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
     -- lazy = true,
+=======
+    event = "VeryLazy",
+>>>>>>> 854cb93 (feat: add clang semanticTokens config)
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { "williamboman/mason.nvim", config = true },
@@ -133,6 +136,21 @@ return {
       capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
       local servers = {
+<<<<<<< HEAD
+=======
+        clangd = {
+          autostart = false,
+          on_attach = function(client, buffer)
+            if client.server_capabilities.semanticTokensProvider then
+              vim.lsp.semantic_tokens.start(buffer, client.id)
+            end
+          end,
+        },
+        gopls = { autostart = false },
+        pyright = { autostart = false },
+        -- ts_ls = { autostart = false },
+        -- typescript_tools = {autostart = false},
+>>>>>>> 854cb93 (feat: add clang semanticTokens config)
         angularls = { autostart = true },
         ansiblels = { autostart = false },
         bashls = { autostart = false },
