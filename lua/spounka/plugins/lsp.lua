@@ -157,7 +157,6 @@ return {
         html = { autostart = false },
 
         jdtls = { autostart = false },
-        jedi_language_server = { autostart = false },
         jsonls = { autostart = false },
 
         nginx_language_server = { autostart = false },
