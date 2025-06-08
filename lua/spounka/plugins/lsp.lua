@@ -16,22 +16,17 @@ return {
   { "Bilal2453/luvit-meta", lazy = true },
 
   {
+
     -- Main LSP Configuration
     "neovim/nvim-lspconfig",
-<<<<<<< HEAD
-    -- ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
-    -- lazy = true,
-=======
-    event = "VeryLazy",
->>>>>>> 854cb93 (feat: add clang semanticTokens config)
     dependencies = {
-      -- Automatically install LSPs and related tools to stdpath for Neovim
+      -- automatically install lsps and related tools to stdpath for neovim
       { "williamboman/mason.nvim", config = true },
       "williamboman/mason-lspconfig.nvim",
-      "WhoIsSethDaniel/mason-tool-installer.nvim",
+      "whoissethdaniel/mason-tool-installer.nvim",
 
-      -- Useful status updates for LSP.
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+      -- Useful status updates for LSP. NOTE: `opts = {}` is the same as
+      -- calling `require('fidget').setup({})`
       { "j-hui/fidget.nvim", opts = {} },
 
       -- Allows extra capabilities provided by nvim-cmp
@@ -136,8 +131,6 @@ return {
       capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
       local servers = {
-<<<<<<< HEAD
-=======
         clangd = {
           autostart = false,
           on_attach = function(client, buffer)
@@ -148,13 +141,7 @@ return {
         },
         gopls = { autostart = false },
         pyright = { autostart = false },
-<<<<<<< HEAD
-        -- ts_ls = { autostart = false },
-        -- typescript_tools = {autostart = false},
->>>>>>> 854cb93 (feat: add clang semanticTokens config)
-=======
         ts_ls = { autostart = false },
->>>>>>> aec9056 (fix: enable ts_ls)
         angularls = { autostart = true },
         ansiblels = { autostart = false },
         bashls = { autostart = false },
