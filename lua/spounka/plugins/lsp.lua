@@ -148,9 +148,13 @@ return {
         },
         gopls = { autostart = false },
         pyright = { autostart = false },
+<<<<<<< HEAD
         -- ts_ls = { autostart = false },
         -- typescript_tools = {autostart = false},
 >>>>>>> 854cb93 (feat: add clang semanticTokens config)
+=======
+        ts_ls = { autostart = false },
+>>>>>>> aec9056 (fix: enable ts_ls)
         angularls = { autostart = true },
         ansiblels = { autostart = false },
         bashls = { autostart = false },
