@@ -19,8 +19,10 @@ return {
 
     -- Main LSP Configuration
     "neovim/nvim-lspconfig",
+    -- ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
+    -- lazy = true,
     dependencies = {
-      -- automatically install lsps and related tools to stdpath for neovim
+      -- Automatically install LSPs and related tools to stdpath for Neovim
       { "williamboman/mason.nvim", config = true },
       "williamboman/mason-lspconfig.nvim",
       "whoissethdaniel/mason-tool-installer.nvim",
