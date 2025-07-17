@@ -3,6 +3,7 @@ vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true
 vim.opt.number = true
+vim.opt.rnu = true
 vim.g.editorconfig = false
 
 vim.opt.mouse = "a"
