@@ -201,6 +201,7 @@ return {
         "stylua",
         "flake8",
         "black",
+        "blackd-client",
         "isort",
         "prettier",
         "clang-format",
