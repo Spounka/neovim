@@ -18,7 +18,7 @@ return {
     format_on_save = false,
     formatters_by_ft = {
       lua = { "stylua" },
-      cmake = { "cmake_format" },
+      cmake = { "cmake-format" },
       c = { "clang-format" },
       cpp = { "clang-format" },
       -- Conform can also run multiple formatters sequentially

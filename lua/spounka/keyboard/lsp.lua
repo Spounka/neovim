@@ -7,5 +7,5 @@ vim.keymap.set({ "n", "x" }, "<Leader>ps", function()
 end, { silent = true, desc = "[P]roject [S]top LSP" })
 
 vim.keymap.set({ "n", "x", "v" }, "<M-o>", function()
-  vim.cmd("ClangdSwitchSourceHeader")
+  vim.cmd("LspClangdSwitchSourceHeader")
 end, { silent = false, desc = "Switch Header Source Files" })
