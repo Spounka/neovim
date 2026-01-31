@@ -9,15 +9,8 @@ return {
     -- Snippet Engine & its associated nvim-cmp source
     {
       "L3MON4D3/LuaSnip",
-      build = (function()
-        -- Build Step is needed for regex support in snippets.
-        -- This step is not supported in many windows environments.
-        -- Remove the below condition to re-enable on windows.
-        if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
-          return
-        end
-        return "make install_jsregexp"
-      end)(),
+      version = "2.*",
+      build = "make install_jsregexp",
       dependencies = {
         -- `friendly-snippets` contains a variety of premade snippets.
         --    See the README about individual language/framework/plugin snippets:
@@ -56,6 +49,18 @@ return {
         end,
       },
       completion = { completeopt = "menu,menuone,noinsert" },
+      sorting = {
+        comparators = {
+          cmp.config.compare.offset,
+          cmp.config.compare.exact,
+          cmp.config.compare.recently_used,
+          require("clangd_extensions.cmp_scores"),
+          cmp.config.compare.kind,
+          cmp.config.compare.sort_text,
+          cmp.config.compare.length,
+          cmp.config.compare.order,
+        },
+      },
 
       -- For an understanding of why these mappings were
       -- chosen, you will need to read `:help ins-completion`

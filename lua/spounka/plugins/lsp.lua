@@ -134,26 +134,33 @@ return {
 
       local servers = {
         clangd = {
-          autostart = false,
-          on_attach = function(client, buffer)
+          cmd = {
+            "clangd",
+            "--background-index",
+            "--clang-tidy",
+            "--completion-style=detailed",
+            "--cross-file-rename",
+            "--header-insertion=iwyu",
+            "--header-insertion-decorators",
+          },
+          capabilities = capabilities,
+          on_attach = function(client, bufnr)
             if client.server_capabilities.semanticTokensProvider then
-              vim.lsp.semantic_tokens.start(buffer, client.id)
+              vim.lsp.semantic_tokens.start(bufnr, client.id)
             end
           end,
         },
-        gopls = { autostart = false },
-        pyright = { autostart = false },
-        ts_ls = { autostart = false },
-        angularls = { autostart = true },
+        angularls = { autostart = false },
         ansiblels = { autostart = false },
         bashls = { autostart = false },
-        clangd = { autostart = false },
         cmake = { autostart = false },
         cssls = { autostart = false },
         dockerls = { autostart = false },
         docker_compose_language_service = { autostart = false },
+
         emmet_ls = { autostart = false },
         eslint = { autostart = true },
+
         gopls = { autostart = false },
 
         html = { autostart = false },
