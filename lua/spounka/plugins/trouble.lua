@@ -1,7 +1,9 @@
+local defines = require("spounka.defines")
 return {
   "folke/trouble.nvim",
   opts = {}, -- for default options, refer to the configuration section for custom setup.
   cmd = "Trouble",
+  ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
   keys = {
     {
       "<leader>xx",

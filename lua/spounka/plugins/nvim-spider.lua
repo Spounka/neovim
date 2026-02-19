@@ -2,7 +2,6 @@ local defines = require("spounka.defines")
 return {
   "chrisgrieser/nvim-spider",
   ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
-  lazy = true,
   keys = {
     -- lazy.nvim
     {

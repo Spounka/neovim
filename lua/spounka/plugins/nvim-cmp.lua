@@ -2,21 +2,21 @@ local defines = require("spounka.defines")
 -- Autocompletion
 return {
   "hrsh7th/nvim-cmp",
-  event = "InsertEnter",
-  lazy = true,
-  ft = defines.REFACTOR_LAZY_FILES_TYPES,
+  ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
   dependencies = {
     -- Snippet Engine & its associated nvim-cmp source
     {
       "L3MON4D3/LuaSnip",
       version = "2.*",
       build = "make install_jsregexp",
+      ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
       dependencies = {
         -- `friendly-snippets` contains a variety of premade snippets.
         --    See the README about individual language/framework/plugin snippets:
         --    https://github.com/rafamadriz/friendly-snippets
         {
           "rafamadriz/friendly-snippets",
+          ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
           config = function()
             require("luasnip.loaders.from_vscode").lazy_load()
             require("luasnip.loaders.from_lua").lazy_load({ paths = { "spounka.snippets.cpp" } })
@@ -40,7 +40,15 @@ return {
     -- See `:help cmp`
     local cmp = require("cmp")
     local luasnip = require("luasnip")
-    luasnip.config.setup({})
+    luasnip.config.setup({
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "c", "cpp" },
+        once = true,
+        callback = function()
+          require("spounka.snippets.cpp").config()
+        end,
+      }),
+    })
 
     cmp.setup({
       snippet = {

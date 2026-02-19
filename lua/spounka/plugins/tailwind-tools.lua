@@ -2,7 +2,6 @@
 return {
   "luckasRanarison/tailwind-tools.nvim",
   name = "tailwind-tools",
-  lazy = true,
   ft = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
   build = ":UpdateRemotePlugins",
   dependencies = {

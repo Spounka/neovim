@@ -23,7 +23,6 @@ return {
       cpp = { "clang-format" },
       -- Conform can also run multiple formatters sequentially
       python = { "flake8", "isort", "black" },
-      go = {},
       markdown = { "markdownlint" },
       typescript = { "prettierd", "prettier", "biome", stop_after_first = true },
       typescriptreact = { "prettierd", "prettier", "biome", stop_after_first = true },

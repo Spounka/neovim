@@ -4,8 +4,6 @@ local defines = require("spounka.defines")
 return {
   {
     "mfussenegger/nvim-lint",
-    event = { "BufReadPre", "BufNewFile" },
-    lazy = true,
     ft = defines.REFACTOR_LAZY_FILES_TYPES,
     config = function()
       local lint = require("lint")

@@ -2,8 +2,6 @@ local defines = require("spounka.defines")
 -- Highlight, edit, and navigate code
 return {
   "nvim-treesitter/nvim-treesitter",
-  lazy = true,
-
   ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
 
   build = ":TSUpdate",

@@ -3,7 +3,6 @@ return {
   dependencies = {
     { "akinsho/toggleterm.nvim", version = "*", config = true },
   },
-  lazy = true,
   ft = { "cpp", "c", "cmake" },
   config = function()
     require("cmake-tools").setup({

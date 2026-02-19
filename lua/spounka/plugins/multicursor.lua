@@ -41,7 +41,7 @@ return {
     end)
 
     -- Split visual selections by regex.
-    set("x", "S", function()
+    set("x", "<leader>O", function()
       mc.splitCursors()
     end)
 

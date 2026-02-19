@@ -1,3 +1,4 @@
+local defines = require("spounka.defines")
 return {
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
@@ -19,8 +20,7 @@ return {
 
     -- Main LSP Configuration
     "neovim/nvim-lspconfig",
-    -- ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
-    -- lazy = true,
+    ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { "williamboman/mason.nvim", config = true },
@@ -208,11 +208,9 @@ return {
         "stylua",
         "flake8",
         "black",
-        "blackd-client",
         "isort",
         "prettier",
         "clang-format",
-        "biome",
       }
       local linters = {
         "cmakelint",

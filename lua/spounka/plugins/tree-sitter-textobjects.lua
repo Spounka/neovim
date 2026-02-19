@@ -1,7 +1,6 @@
 local defines = require("spounka.defines")
 return {
   "nvim-treesitter/nvim-treesitter-textobjects",
-  lazy = true,
   ft = defines.TREE_SITTER_ENABLED_LANGUAGES,
   config = function()
     require("nvim-treesitter.configs").setup({

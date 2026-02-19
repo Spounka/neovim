@@ -1,7 +1,7 @@
 -- Useful plugin to show you pending keybinds.
 return {
   "folke/which-key.nvim",
-  event = "VimEnter", -- Sets the loading event to 'VimEnter'
+  event = "VeryLazy", -- Sets the loading event to 'VimEnter'
   opts = {
     icons = {
       -- set icon mappings to true if you have a Nerd Font
