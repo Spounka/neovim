@@ -150,7 +150,6 @@ return {
             end
           end,
         },
-        angularls = { autostart = false },
         ansiblels = { autostart = false },
         bashls = { autostart = false },
         cmake = { autostart = false },
@@ -161,12 +160,8 @@ return {
         emmet_ls = { autostart = false },
         eslint = { autostart = true },
 
-        gopls = { autostart = false },
-
         html = { autostart = false },
 
-        jdtls = { autostart = false },
-        jedi_language_server = { autostart = false },
         jsonls = { autostart = false },
 
         nginx_language_server = { autostart = false },
@@ -207,14 +202,12 @@ return {
       local formatters = {
         "stylua",
         "flake8",
-        "black",
         "isort",
         "prettier",
         "clang-format",
       }
       local linters = {
         "cmakelint",
-        "djlint",
         "jsonlint",
         "yamllint",
         "htmlhint",
@@ -224,7 +217,6 @@ return {
         "luacheck",
         "markdownlint",
         "ansible-lint",
-        "commitlint",
       }
       --  You can press `g?` for help in this menu.
       -- require("mason").setup()
