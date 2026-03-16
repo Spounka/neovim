@@ -10,4 +10,4 @@ vim.keymap.set({ "n", "x", "v" }, "<M-o>", function()
   vim.cmd("LspClangdSwitchSourceHeader")
 end, { silent = false, desc = "Switch Header Source Files" })
 
-vim.keymap.set({ "n", "i", "v" }, "<leader>is", vim.lsp.buf.signature_help, { desc = "[I]nformation [S]ignature Help" })
+vim.keymap.set({ "n", "x", "v" }, "<leader>is", vim.lsp.buf.signature_help, { desc = "[I]nformation [S]ignature Help" })
