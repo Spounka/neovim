@@ -1,5 +1,6 @@
 return {
   TREE_SITTER_ENSURE_INSTALLED = {
+    "asm",
     "lua",
     "luadoc",
     "vim",
@@ -10,6 +11,7 @@ return {
     "cpp",
     "c_sharp",
     "cmake",
+    "make",
     "html",
     "css",
     "python",
@@ -22,12 +24,14 @@ return {
     "latex",
     "php",
     "dockerfile",
+    "toml",
     "java",
     "json",
     "yaml",
   },
 
   TREE_SITTER_ENABLED_LANGUAGES = {
+    "asm",
     "lua",
     "vim",
     "go",
@@ -35,6 +39,7 @@ return {
     "cpp",
     "cs",
     "cmake",
+    "make",
     "html",
     "css",
     "python",
@@ -47,6 +52,7 @@ return {
     "tsx",
     "jsx",
     "tex",
+    "toml",
     "php",
     "dockerfile",
     "java",
