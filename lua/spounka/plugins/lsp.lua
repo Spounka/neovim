@@ -152,7 +152,7 @@ return {
         },
         ansiblels = { autostart = false },
         bashls = { autostart = false },
-        cmake = { autostart = false },
+        -- cmake = { autostart = false },
         cssls = { autostart = false },
         dockerls = { autostart = false },
         docker_compose_language_service = { autostart = false },
