@@ -164,7 +164,7 @@ return {
 
         jsonls = { autostart = false },
 
-        nginx_language_server = { autostart = false },
+        -- nginx_language_server = { autostart = false },
 
         pyright = { autostart = false },
 
