@@ -12,7 +12,7 @@ return {
   opts = {}, -- your configuration
   config = function()
     require("tailwind-tools").setup({})
-    vim.keymap.set({ "n", "i", "x" }, "<leader>F", function()
+    vim.keymap.set({ "n", "x" }, "<leader>F", function()
       print("sorting tailwind...")
       vim.cmd("TailwindSort")
     end, {
