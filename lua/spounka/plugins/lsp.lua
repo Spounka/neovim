@@ -166,7 +166,7 @@ return {
 
         -- nginx_language_server = { autostart = false },
 
-        pyrefly = { autostart = false },
+        -- pyrefly = { autostart = false },
 
         tailwindcss = { autostart = false },
         texlab = { autostart = false },
