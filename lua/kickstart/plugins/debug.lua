@@ -98,37 +98,34 @@ return {
   config = function()
     local dap = require("dap")
     local dapui = require("dapui")
+    local path = vim.fn.getcwd() .. "/.venv/bin/python"
+    require("dap-python").setup(path)
+
+    dap.configurations.python = {
+      {
+        type = "python",
+        request = "launch",
+        name = "Current file",
+        program = "${file}",
+        console = "integratedTerminal",
+      },
+      {
+        type = "python",
+        request = "launch",
+        name = "Django runserver",
+        program = "${workspaceFolder}/manage.py",
+        args = { "runserver", "127.0.0.1:8000", "--noreload" },
+        django = true,
+        justMyCode = true,
+        console = "integratedTerminal",
+        cwd = "${workspaceFolder}",
+      },
+    }
 
     dap.adapters.gdb = {
       type = "executable",
       command = "/usr/bin/gdb",
       args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
-    }
-
-    dap.configurations.python = {
-      {
-        -- The first three options are required by nvim-dap
-        type = "python", -- the type here established the link to the adapter definition: `dap.adapters.python`
-        request = "launch",
-        name = "Launch file",
-
-        -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
-
-        program = "${file}", -- This configuration will launch the current file if used.
-        pythonPath = function()
-          -- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
-          -- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
-          -- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
-          local cwd = vim.fn.getcwd()
-          if vim.fn.executable(cwd .. "/venv/bin/python") == 1 then
-            return cwd .. "/venv/bin/python"
-          elseif vim.fn.executable(cwd .. "/.venv/bin/python") == 1 then
-            return cwd .. "/.venv/bin/python"
-          else
-            return "/usr/bin/python"
-          end
-        end,
-      },
     }
 
     dap.configurations.c = {
@@ -188,19 +185,19 @@ return {
 
       -- You can provide additional configuration to the handlers,
       -- see mason-nvim-dap README for more information
-      handlers = {
-        python = function(config)
-          config.adapters = {
-            type = "executable",
-            command = "/usr/bin/python3",
-            args = {
-              "-m",
-              "debugpy.adapter",
-            },
-          }
-          require("mason-nvim-dap").default_setup(config) -- don't forget this!
-        end,
-      },
+      -- handlers = {
+      --   python = function(config)
+      --     config.adapters = {
+      --       type = "executable",
+      --       command = "/usr/bin/python3",
+      --       args = {
+      --         "-m",
+      --         "debugpy.adapter",
+      --       },
+      --     }
+      --     require("mason-nvim-dap").default_setup(config) -- don't forget this!
+      --   end,
+      -- },
 
       -- You'll need to check that you have the required things installed
       -- online, please don't ask me how to install them :)
